@@ -12,7 +12,17 @@ if(!date || !month || !year){
 else{
     const d = new Date();
     let currentYear = d.getFullYear();
-    let age = currentYear - year
+
+    
+      let currentMonth = d.getMonth()+1;
+
+    let age=""
+    if(currentMonth>month){
+       age = currentYear - year
+    }
+   else{
+    age = (currentYear - year)-1
+   }
 
     let span = document.querySelector('.bolder')
     span.innerHTML = age
